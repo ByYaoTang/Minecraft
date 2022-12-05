@@ -9,32 +9,16 @@ Author:糖崽
 Update:2022.12.6
 
 URL-Navigation
-|
-生存端
+
 https://meteorclient.com/   ---彗星 1.19/1.19.2
 https://liquidbounce.net/    ---Liquidbounce 1.8.9/1.12.2
 https://www.wurstclient.net/   ---Wurst ~1.19.2
 https://aristois.net/   ---Aristois端 ~1.19.2
-|
-Mcstorm风暴CPS
-https://mcstorm.io/
-|
-悠悠Socks4/5代理池
+
+Socks Proxy
 https://www.uu-proxy.com/
-|
-RGBMC彩色字生成
-https://rgbmc.org/
-|
-MCPTool视频和文档
-https://www.youtube.com/c/wRRulos/featured
-https://docs.google.com/document/d/1w4difgN40KkUcHIeDu0AV_IGsKS0r6YoTrTAKpQqqPk/edit
-|
-MCSkin皮肤编辑
-https://www.minecraftskins.com/skin-editor/
 
-- fabric Api 0.67.1 1.19.2
-
-[MeteorClient彗星端.Command]
+[MeteorClient彗星.Command]
 .server  ---获取服务器信息
 .nbt get  ---获取手上的物品NBT值
 .nbt copy ---复制手上的物品NBT值
@@ -257,11 +241,8 @@ Hitboxes + Auto Trap/Auto Web 把别人围住隔墙打
 Air Place + .vclip 4 可向上搭方块并爬升
 Fast Use + Scaffold 快速脚下搭路
 Hitboxes + Kill Aura 放大碰撞箱后再利用杀戮
-船箱复制仅限1.19
-潜影盒复制1.19/1.18.x/1.16.x/1.17.1/1.16.5~1.2.0
 利用两个燧石和四个木板合成制箭台后,找到村民利用木棍换绿宝石
-在沙滩找到宝藏获取铁和金锭
-村庄召集村民：挖掉村庄所有床，在钟的旁边放一张床，然后敲响钟
+召集村民/移动村民：挖掉村庄所有床，在钟的旁边放一张床，然后敲响钟
 
 [SeedcrackerX反推] - The seeds of all Spaces are the same
 种子多物种小地图 https://www.chunkbase.com/apps/seed-map#3085358394159334829
@@ -274,7 +255,6 @@ IP:mchai.top:21001 - 心海 海之韵 服务器 大型严格反作弊服务器
 9167182545767792685
 IP:nutmc.cn - 低反作弊 无地皮
 6837164887862627082
-
 
 [MC-Bots机器人] - https://github.com/crpmax/mc-bots
 usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
@@ -324,7 +304,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}        ---生成掉落物64颗钻石
 /give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
 
-[Copy大法]
+[Copy]
 /clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
 /clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
@@ -351,7 +331,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /co lookup u:unusuallman a:command t:99d   ---玩家指令记录 登录记录
 /co lookup u:Litch_77 a:chat t:99d       ---玩家聊天记录
 
-[MATRIX Learning-robot 严格反作弊插件]
+[MATRIX Learning-robot 反作弊插件]
 检测项 {
 	Combat:
 	KillAura/LegitAura/AimBot/MultiAura (KillAura/HitBox)
@@ -410,7 +390,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 	Bot:Baritone (AutoBot)
 }
 
-[baritone] 彗星-机器人 可配合Freecam灵魂出窍使用
+[baritone]
 .baritone come ---前往灵魂出窍的位置
 .baritone follow player Tu_tuzi ---找玩家/跟随玩家
 .baritone goto x y z ---去某个地方
@@ -708,7 +688,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute at @a run playsound minecraft:ambient.warped_forest.additions voice @a ~ ~ ~ 100    ---鬼魂 鬼群 灵堂
 /execute at @a run playsound minecraft:music_disc.5 voice @a ~ ~ ~ 100    ---音乐disc.5
 
-[exec]
+[Execute]
 /execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~               ---雷电雪球（雪球抛物线持续生成闪电）
 /execute as @e[type=cow] at @s run summon lightning_bolt ~ ~ ~                   ---雷击全图牛
 /execute as @e[type=minecraft:zombie] at @s run summon lightning_bolt ~ ~ ~     ---雷击全图僵尸
@@ -723,7 +703,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 
 NBT格式化颜色:[{"color":"yellow"},{"常用为技术性名称"}] 参考：https://minecraft.fandom.com/zh/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81
 
-[Team团队]
+[Team团队-称号]
 /team add MidnightField "MidnightField"
 /team modify MidnightField prefix {"text":"[午夜の领域] ","color":"gold","bold":"true"}  给予MidnightField队伍前面标签显示
 /team modify MidnightField suffix {"text":" [队伍]","color":"dark_red","bold":"true"}   给予MidnightField队伍后面标签显示
@@ -739,7 +719,7 @@ NBT格式化颜色:[{"color":"yellow"},{"常用为技术性名称"}] 参考：ht
 /scoreboard objectives add dgb deathCount ["呆瓜榜"]  ---新建阵亡次数 dgb 记分板
 /scoreboard objectives setdisplay sidebar dgb        ---显示在屏幕右侧
 
-[调试]
+[Debug]
 F3+A：重新加载所有区块。
 F3+B：打开或关闭显示实体的碰撞箱。同时显示实体的朝向。
 F3+C：以execute in ''维度'' run tp的形式复制玩家当前的坐标及旋转角度。
@@ -775,7 +755,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 /item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64  ---将上2格的烟熏炉燃料格替换并放入64个煤炭块
 /item replace block -67 116 89 container.0 with minecraft:coal_block 64  ---将指定坐标的发射器第一格替换并放入64个煤炭块
 
-游戏规则 - Game Rule {
+游戏规则设置 - Game Rule {
 	announceAdvancements	是否在聊天框中公告玩家进度的达成.
     blockExplosionDropDecay	由方块源（除TNT）爆炸炸毁的方块是否会有概率不掉落.
     commandBlockOutput	命令方块执行命令时是否在聊天框中向管理员显示.
@@ -832,16 +812,16 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 自定义村民 单页买卖 NBT 修复了名字显示 NoAI{
 	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:55b},sell:{id:"techreborn:electronic_circuit",Count:1b}}]}}
 }
-自定义村民 多项买卖 NBT 腐肉时代{
+自定义村民 多项买卖 NBT 腐肉商店{
 	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:rotten_flesh",Count:3b},sell:{id:"minecraft:leather",Count:5b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:leather",Count:2b},sell:{id:"minecraft:iron_ingot",Count:3b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:iron_ingot",Count:4b},sell:{id:"minecraft:gold_ingot",Count:2b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:gold_ingot",Count:10b},sell:{id:"minecraft:diamond",Count:2b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:diamond",Count:10b},sell:{id:"minecraft:enchanted_golden_apple",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:diamond",Count:5b},sell:{id:"minecraft:emerald",Count:5b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:10b},sell:{id:"minecraft:totem_of_undying",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:stick",Count:10b},sell:{id:"minecraft:oak_log",Count:18b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:oak_planks",Count:10b},sell:{id:"minecraft:birch_planks",Count:10b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:stick",Count:1b},sell:{id:"minecraft:debug_stick",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:10b},sell:{id:"minecraft:slime_ball",Count:5b}}]}}
 }
 自定义村民 多项买卖 NBT 生存组合{
 	/summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:dirt,Count:1},sell:{id:emerald,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dirt,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:mangrove_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:golden_carrot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dark_oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:spruce_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:iron_ingot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:diamond,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:glass,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
 }
-自定义村民 多项买卖 NBT 沙漠建材 全emer{
+自定义村民 多项买卖 NBT 沙漠建材 全Emer{
 	/summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:stone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:grass_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:cut_sandstone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_wall,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:birch_fence_gate,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_stairs,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_slab,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:warped_planks,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:gray_wool,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
 }
-自定义村民 多项买卖 NBT 18项全emer{
+自定义村民 多项买卖 NBT 18项全Emer{
     /summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:grass_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:cobblestone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:lapis_ore,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:spruce_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:birch_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dark_oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:mangrove_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:bookshelf,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:golden_carrot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:coal_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:iron_ingot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:emerald,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:firework_rocket,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:tinted_glass,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:ender_chest,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:lantern,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sugar_cane,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
 }
 
@@ -980,14 +960,14 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
 }
 
-普通水晶箱{
+普通装备箱{
     /give @r minecraft:chest{display:{Name:"[{\"text\":\"初始装备-近战\",\"color\":\"gold\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"},BlockEntityTag:{CustomName:"{\"text\":\"初始装备\"}",Items:[{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:0b},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:1b},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:2b},{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:3b},{id:"minecraft:diamond_sword",Count:1b,tag:{Unbreakable:1b},Slot:4b},{id:"minecraft:diamond_pickaxe",Count:1b,tag:{Unbreakable:1b},Slot:5b},{id:"minecraft:diamond_axe",Count:1b,tag:{Unbreakable:1b},Slot:6b},{id:"minecraft:golden_apple",Count:64b,Slot:7b},{id:"minecraft:golden_apple",Count:64b,Slot:8b},{id:"minecraft:end_crystal",Count:64b,Slot:9b},{id:"minecraft:end_crystal",Count:64b,Slot:10b},{id:"minecraft:end_crystal",Count:64b,Slot:11b},{id:"minecraft:end_crystal",Count:64b,Slot:12b},{id:"minecraft:end_crystal",Count:64b,Slot:13b},{id:"minecraft:end_crystal",Count:64b,Slot:14b},{id:"minecraft:end_crystal",Count:64b,Slot:15b},{id:"minecraft:end_crystal",Count:64b,Slot:16b},{id:"minecraft:end_crystal",Count:64b,Slot:17b},{id:"minecraft:obsidian",Count:64b,Slot:18b},{id:"minecraft:obsidian",Count:64b,Slot:19b},{id:"minecraft:obsidian",Count:64b,Slot:20b},{id:"minecraft:obsidian",Count:64b,Slot:21b},{id:"minecraft:obsidian",Count:64b,Slot:22b},{id:"minecraft:obsidian",Count:64b,Slot:23b},{id:"minecraft:obsidian",Count:64b,Slot:24b},{id:"minecraft:obsidian",Count:64b,Slot:25b},{id:"minecraft:obsidian",Count:64b,Slot:26b}]}} 1
 }
 32k{
     /give @p minecraft:diamond_axe{Unbreakable:1b,display:{Name:"[\"32k\"]",Lore:["[\"MOJANG17\"]"]},Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:0.5d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]} 1
 }
 
-拿32k的僵尸{
+拿32k武器的僵尸{
     /summon minecraft:zombie ~ ~1 ~ {HandItems:[{id:"minecraft:diamond_axe",Count:1b,tag:{Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:9999999d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"noName",Amount:99999d,Operation:0,UUID:[I;4743,4527,1374,2692],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]}}]}
 }
 骑着僵尸的小白 附魔弓 四连发{
@@ -1077,7 +1057,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"[开窗]","color":"aqua","bold":"true","italic":false,"clickEvent":{"action":"run_command","value":"/fill 124 69 -843 128 68 -843 glass"}}'}} 1
 }
 
-//NBT格式库 基础语法
+//NBT基础语法
 {
     整型Int
     短整型Short
