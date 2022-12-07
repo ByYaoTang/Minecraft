@@ -6,7 +6,6 @@
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   
 
 Author:糖崽
-Update:2022.12.6
 
 URL-Navigation
 
@@ -298,38 +297,44 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜"}        ---代替说话
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
 /tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
-/tellraw @a [{"text":"[涵涵]Life_candy取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
+/tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
 
-/summon minecraft:experience_bottle 1077 -22 185                       ---生成经验瓶修装备
-/summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}        ---生成掉落物64颗钻石
+/summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
+/summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
 /give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
+
+/give Yao_Tang minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
+.nbt set {EntityTag:{Invisible:1b}}
 
 [Copy]
 /clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
 /clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
 [小木斧创世神插件]
-//copy     ---复制选区
+//copy      ---复制选区
 //paste     ---粘贴
 //paste -a  ---去除空气粘贴
 //undo      ---撤销
 //set ID    ---填充方块
 //set 30%1,70%2  ---填充30%石头70%草方块混合
 //replace    ---替换方块（创世神）
-//regen      ---种子恢复
+//regen      ---从种子恢复
 //schematic list   ---跨存档复制粘贴列表（创世神）
 //rotate          ---旋转(90,-90)
 //stack 10        ---延伸
 //stack 20 -a     ---去除空气延伸
-//copy //br copy /mask stone_bricks     ---蒙版笔刷
+//copy //br copy /mask stone_bricks    ---蒙版笔刷
 
-[CoreProtect保护插件]
+[CoreProtect回档插件]
 /co inspect  ---开启/关闭查询
 /co near    ---查看半径五格内的方块记录
 /co rollback t:回档的时间 r:回档的半径   ----区域回档
 /co rollback u:Notch t:1h r:#global      ---撤销玩家操作（co插件） 
 /co lookup u:unusuallman a:command t:99d   ---玩家指令记录 登录记录
 /co lookup u:Litch_77 a:chat t:99d       ---玩家聊天记录
+
+[Ledger回档插件]
+/ledger rollback range:回档的半径 after:5m   ---区域回档
 
 [MATRIX Learning-robot 反作弊插件]
 检测项 {
@@ -696,7 +701,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute at Life_candy run summon minecraft:lightning_bolt                    ---电人
 /execute as Yao_Tang at @s run summon experience_bottle ~ ~ ~                ---生成跟踪Yao_Tang的经验瓶
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
-/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a         ---炸CPU
+/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a         ---崩CPU
 
 /advancement grant @a everything    ---获得全进度
 /advancement revoke @a everything   ---删除全进度
@@ -2733,7 +2738,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 
 //PlaceholderAPI 变量
 {
-	    /placeholderapi (/papi)
+	/placeholderapi (/papi)
     /papi icloud[可写内容]/ecloud[变量集]
 
     权限
@@ -2758,212 +2763,115 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     %javascript_<your placeholder identifier>%  javascript_占位符
 
     服务器变量
-
     %server_online% 服务器当前在线人数
-
     %server_unique_joins% 服务器在线人数
-
     %server_uptime% 服务器运行时间
-
     %server_ram_used% 服务器内存使用
-
     %server_ram_free% 服务器内存空闲
-
     %server_ram_total% 服务器内存总计
-
     %server_ram_max% 服务器最大内存
-
     %server_name% 服务器名
-
     %server_version% 服务器版本
-
     %server_max_players% 服务器最大玩家数
-
     %server_tps% 服务器TPS
-
     %server_tps_1% 服务器当前TPS
-
     %server_tps_5% 服务器 5 分钟前TPS
-
     %server_tps_15% 服务器 15 分钟前TPS
-
     %server_tps_1_colored%
-
     %server_tps_5_colored%
-
     %server_tps_15_colored%
-
     %server_online_<world>%
-
     %server_has_whitelist% 服务器是否启用了白名单
-
     %server_total_chunks% 服务器总区块数
-
     %server_total_living_entities% 服务器总活跃实体
-
     %server_total_entities% 服务器总实体数
-
     %server_time_<SimpleDateFormat>%
-
     %server_countdown_<SimpleDateFormat>_%
-
-    e.g. %server_countdown_dd.MM.yyyy_01.01.2020%
+	%server_countdown_dd.MM.yyyy_01.01.2020%
 
     播放音乐
-
     占位符被解析时会播放音乐
     %sound_<sound>-<volume>-<pitch>% 播放音乐 sound 为音乐 volume 音量 pitch 音调
-
     %sound_ORB_PICKUP-1-2% 播放捡起经验球的音效，音量为1，音调为2
 
     全局音乐
-
     当占位符被解析时，为所有在服务器上的玩家播放音乐
     %sound_all_<sound>-<volume>-<pitch>% 全局播放音乐 sound 为音乐 volume 音量 pitch 音调
-
     %sound_all_ORB_PICKUP-1-2% 全局播放捡起经验球的音效，音量为1，音调为2
 
     检测服务器状态的变量
-
     %pinger_isonline_testplugins.com:25565% 查看服务器是否在线
-
     %pinger_players_yourip:yourport% 查看玩家数量
-
     %pinger_max_youraddress.com% 查看最大玩家数？
-
     %pinger_motd_testplugins.com% 查看欢迎信息motd
 
-    蹦极服
-
+    蹦极
     %bungee_total% 蹦极服总数
-
     %bungee_<servername>%
-
     RedisBungee 另一个蹦极服插件
-
     %redisbungee_total% 同上
-
     %redisbungee_<servername>%
-
     NMS Player placeholders
-
     %nmsplayer_ping%
 
     玩家变量
-
     %player_timestamp% 玩家时间？
-
     %player_server% 玩家服务器？
-
     %player_name% 玩家名
-
     %player_displayname% 玩家昵称【包括 称号】
-
     %player_uuid% 玩家的UUID
-
     %player_gamemode% 玩家的游戏模式
-
     %player_x%
-
     %player_y%
-
     %player_z% 玩家的X Y Z坐标
-
     %player_world% 玩家所在世界
-
     %player_is_op% 玩家是否为OP
-
     %player_bed_x%
-
     %player_bed_y%
-
     %player_bed_z% 玩家床/出生点的X Y Z坐标
-
     %player_bed_world% 玩家床/出生点的世界
-
     %player_ip% 玩家的IP
-
     %player_allow_flight% 玩家是否允许飞行
-
     %player_can_pickup_items% 玩家能否捡起物品
-
     %player_compass_x%
-
     %player_compass_y%
-
     %player_compass_z% 玩家指南针所指向的X Y Z坐标
-
     %player_compass_world% 玩家指南针所指向的世界
-
     %player_has_permission_<permission>% 玩家是否有 XXX 权限
-
     %player_custom_name% 玩家的自定义名字
-
     %player_exp% 玩家的经验值
-
     %player_exp_to_level% 玩家到下级还有多少经验值
-
     %player_total_exp% 玩家的总共经验值
-
     %player_level% 玩家的等级
-
     %player_first_join_date% 玩家第一次加入游戏的日期
-
     %player_fly_speed% 玩家飞行速度
-
     %player_food_level% 玩家饥饿等级
-
     %player_health% 玩家的血量
-
     %player_max_health% 玩家最大的血量
-
     %player_health_scale% 玩家血量百分比
-
     %player_item_in_hand% 玩家手上的东西
-
     %player_last_damage% 玩家上次 受到/造成 的伤害
-
     %player_max_air%
-
     %player_remaining_air%
-
     %player_no_damage_ticks% 玩家没有 受到/造成 伤害的时间 单位为tick
-
     %player_max_no_damage_ticks% 玩家最大没有 受到/造成 伤害的时间 单位为tick
-
     %player_time% 玩家时间
-
     %player_time_offset%
-
     %player_saturation% 玩家的饥饿值
-
     %player_sleep_ticks% 玩家睡觉的时间 单位tick
-
     %player_walk_speed% 玩家走路的速度
-
     %player_ticks_lived% 玩家生存的时间 单位tick
-
     %player_seconds_lived% 玩家生存的时间 单位秒
-
     %player_minutes_lived% 玩家生存的时间 单位分钟
-
     %player_ping% 玩家的延迟 单位毫秒
-
-    %player_ping_＜player＞% 某某玩家的延迟 单位毫秒
-
+    %player_ping_<player>% 某某玩家的延迟 单位毫秒
 
     检测物品栏
-
     %invcheck_m:<Material name or ID>_a:<amount>_d:_n:<displayname>_l:<lore-line-1,lore-line-2>% 检测物品栏有无物品——m:物品ID a:物品数量 d:数据附加值 n:自定义名字
-
     %invcheck_m:STONE_a:64% - 检测玩家是否有64个石头
-
     %invcheck_m:STONE_a:1_n:&aAwesome-Stone% 检测玩家有没有一个叫做 &aAwesome-Stone 的石头
 
-    还可以使用checkitem变量，这里就不细说了
-
     检测物品栏 - CheckItem
-
     CheckItem 占位符用于检测玩家背包中的特定物品.
     安装指令: /papi ecloud download CheckItem
 
@@ -3003,6 +2911,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     %statistic_craft_item:<Item Material>% -- 制造了多少次这个物品
     %statistic_kill_entity:<MobType>% -- 杀死指定实体的次数
     %statistic_entity_killed_by:<MobType>% -- 被指定实体杀死的次数
+
     其他占位符:
     %statistic_mine_block% -- 总共挖掘了多少方块
     %statistic_use_item% -- 总共使用了多少物品
@@ -3075,81 +2984,50 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     %mvdw_<placeholder without brackets>% 这是格式 接下面的变量 不要变量旁边的%%
 
     √AcidIsland
-
     %acidisland_level% 岛的等级
-
     %acidisland_island_x%
-
     %acidisland_island_y%
-
     %acidisland_island_z% 岛的坐标
-
     %acidisland_island_world% 岛所在世界
-
     %acidisland_team_size% 队伍规模
-
     %acidisland_coop_islands% 限制岛屿
 
     √AdvancedFly
-
     %advancedfly_warns% 警告次数
-
     %advancedfly_allowflight% 是否可以飞行
-
     %advancedfly_lastwarnedby% 上次被谁警告
 
     √AnimatedMenu( [] = 可选项 )
     %animatedmenu_motd_<ip>_[port]% 检测IP:PORT的欢迎信息
     %animatedmenu_status_<ip>_[port]_<onlinemessage>_<offlinemessage>% 如果在线输出online 离线输出offline
-
     %animatedmenu_status_testplugins.com_&aOnline_&cOffline%
-
     %animatedmenu_status_testplugins.com_25565_&aOnline_&cOffline%
 
     √ASkyBlock
-
     %askyblock_level% 岛等级
     %askyblock_island_y%
-
     %askyblock_island_z% YZ坐标
-
     %askyblock_island_world% 所在世界
-
     %askyblock_team_size% 队伍规模
-
     %askyblock_coop_islands% 限制岛屿
 
     √AutoRank
-
     %autorank_current_rank% 当前排位
     %autorank_next_rank% 下面的排位
-
     %autorank_time_of_player% 玩家时间
-
     %autorank_local_time% 本地时间
-
     %autorank_global_time% 全局时间
 
-
     √AutoSell
-
     %autosell_in_autosell_mode% 是否为自动出售模式
     %autosell_in_autoblocks_mode% 自动方块？
-
     %autosell_in_automelt_mode% 是否为自动冶炼模式
-
     %autosell_current_shop% 当前商店
-
     %autosell_total_multiplier%
-
     %autosell_time_multiplier%
-
     %autosell_perm_multiplier%
-
     %autosell_perm_multiplier_name%
-
     %autosell_time_multiplier_minsleft%
-
     %autosell_time_multiplier_timeleft% 这些都是什么鬼 multiplier是乘积的意思啊
 
     √ChatColor
@@ -3163,35 +3041,24 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     %checknamehistory_previous_name_date_<#>% 以前名字的日期
 
     √Compassance
-
     %compassance_p_string% 行
-
     %compassance_p_selectedtheme% 选择的主题
-
     %compassance_p_target% 目标
-
     %compassance_p_target_location% 目标位置
-
     %compassance_p_target_distance% 目标距离
-
     %compassance_p_string_theme_<theme-id>% 一行主题？
-
 
     √CraftConomy
     插件列表
     %craftconomy_<currency>% 返回玩家钱数的2倍
     %craftconomy_<currency>@10% 10倍
-
     %craftconomy_<currency>@int% 返回int倍
-
 
     √DeluxeTags
     插件列表
     %deluxetags_tag% 标签
     %deluxetags_identifier% 鉴定人
-
     %deluxetags_description% 描述
-
     %deluxetags_amount% 数量
 
     √DonateParty
@@ -3207,17 +3074,11 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     Essentials
     %essentials_nickname% 昵称
     %essentials_godmode% 是否为上帝模式
-
     %essentials_jailed% 是否在监狱中
-
     %essentials_kit_last_use_<kitname>% 最后一次使用的工具包
-
     %essentials_has_kit_<kitname>% 是否有XX工具包
-
     %essentials_kit_is_available_<kitname>% 是否可以获得XX工具包
-
     %essentials_kit_time_until_available_<kitname>% 知道可以获得的时间
-
     %essentials_pm_recipient% 收到PM
 
     √EZBlocks
@@ -3227,90 +3088,52 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     插件列表
     %ezprestige_prestige%威望
     %ezprestige_prestigetag%威望等级
-
     %ezprestige_nextprestige% 下一个威望等级所需的点数
-
     %ezprestige_nextprestigetag% 下一个威望等级
 
-    √EZRanksLite (已停止更新)
     插件列表
     %ezrankslite_player% 玩家
     %ezrankslite_displayname% 展示名称
-
     %ezrankslite_world% 世界
-
     %ezrankslite_rank% 等级
-
     %ezrankslite_rankup% 下一级
-
     %ezrankslite_cost% 花费
-
     %ezrankslite_cost_formatted% 格式化花费
-
     %ezrankslite_balance% 钱数
-
     %ezrankslite_balance_formatted% 格式化钱数
-
     %ezrankslite_difference% 差距
-
     %ezrankslite_difference_formatted% 格式化 差距
-
     %ezrankslite_progress% 发展
-
     %ezrankslite_progressexact% 精准的发展
-
     %ezrankslite_progressbar%
-
     %ezrankslite_rankprefix%等级前缀
-
     %ezrankslite_rankupprefix% 下一级等级前缀
-
     %ezrankslite_lastrank% 上一级
-
     %ezrankslite_lastrankprefix% 上级前缀
 
     √EZRanksPro
     插件列表
-    和上面内容一样的 对照翻译
     %ezrankspro_player%
-
     %ezrankspro_displayname%
-
     %ezrankspro_world%
-
     %ezrankspro_rank%
-
     %ezrankspro_rankup%
-
     %ezrankspro_cost%
-
     %ezrankspro_cost_formatted%
-
     %ezrankspro_balance%
-
     %ezrankspro_balance_formatted%
-
     %ezrankspro_difference%
-
     %ezrankspro_difference_formatted%
-
     %ezrankspro_progress%
-
     %ezrankspro_progressexact%
-
     %ezrankspro_progressbar%
-
     %ezrankspro_rankprefix%
-
     %ezrankspro_rankupprefix%
-
     %ezrankspro_lastrank%
-
     %ezrankspro_lastrankprefix%
 
     √Factions MCore
     插件列表
-    翻译内容见下面那个插件的翻译
     %factions_faction%
 
     %factions_power%
